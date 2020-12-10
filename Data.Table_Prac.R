@@ -46,7 +46,7 @@ mtdt = mtdt[,eight_cyl:=as.integer(eight_cyl)]
 
 # Group according to by
 mtdtsum1 <- mtdt[,.(AvgMPG = mean(mpg),AvgHp = mean(hp)),by=cyl]
-mtdtsum2 <- mtdt[,AvgMPG:=mean(mpg),by=cyl]
+mtdtsum2 <- mtdt[,AvgMPG:=mean(mpg),by=cyl] # wont't work
 
 # Chaining
 mtdtsum3 <- mtdt[,.(AvgMPG = mean(mpg)), by = cyl][,BreakInHalf:=AvgMPG/2]
